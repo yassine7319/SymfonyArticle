@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} SymfArticles{% endblock %}
+
+{% block body %}
+{% if articles %}
+<table class="table table-striped">
+ <thead>
+   <tr>
+    <th> Article Title </th>
+    <th> Actions </th>
+   </tr>
+    </thead>
+    <tbody>
+     {% for article in articles %}
+     <tr>
+      <td>{{article}}</td>
+      <td>
+       <a class="btn btn-dark" href="/article/1"> Show </a>
+         
+     {% endfor %}
+
+{% else %}
+ <p> no articles to display yet </p>
+{% endif %}
+
+{% endblock %}
